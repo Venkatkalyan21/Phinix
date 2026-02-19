@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts'
 
-const API = 'http://localhost:8000/api'
+import API_BASE from '../api.js'
+const API = API_BASE + '/api'
 
 const COLORS = ['#7C6FFF', '#3ECFCF', '#FF6B9D', '#22c55e', '#f59e0b', '#ef4444']
 

@@ -1,7 +1,8 @@
 import { useState, useRef } from 'react'
 import axios from 'axios'
 
-const API = 'http://localhost:8000/api'
+import API_BASE from '../api.js'
+const API = API_BASE + '/api'
 
 const AGENTS = [
     { key: 'resume_agent', name: 'Resume Agent', icon: '📄', desc: 'Analyzing resume quality & ATS score' },

@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
 
-const API = 'http://localhost:8000/api'
+import API_BASE from '../api.js'
+const API = API_BASE + '/api'
 
 const ROLES = ['ML Engineer', 'Full Stack Developer', 'Data Scientist', 'DevOps Engineer', 'Frontend Developer', 'Backend Developer', 'Cloud Architect']
 

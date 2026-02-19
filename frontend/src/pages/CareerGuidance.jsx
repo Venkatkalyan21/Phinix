@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import axios from 'axios'
 
-const API = 'http://localhost:8000/api'
+import API_BASE from '../api.js'
+const API = API_BASE + '/api'
 
 export default function CareerGuidance() {
     const [form, setForm] = useState({ current_role: '', skills: '', experience_years: 0, interests: '', target_company_type: 'Product Startup' })

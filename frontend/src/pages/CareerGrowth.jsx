@@ -2,7 +2,8 @@ import { useState } from 'react'
 import axios from 'axios'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
-const API = 'http://localhost:8000/api'
+import API_BASE from '../api.js'
+const API = API_BASE + '/api'
 
 export default function CareerGrowth() {
     const [form, setForm] = useState({

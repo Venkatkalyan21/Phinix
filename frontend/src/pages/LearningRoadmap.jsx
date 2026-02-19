@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import axios from 'axios'
 
-const API = 'http://localhost:8000/api'
+import API_BASE from '../api.js'
+const API = API_BASE + '/api'
 
 function parseWeeks(text) {
     // Try to split roadmap text into week blocks

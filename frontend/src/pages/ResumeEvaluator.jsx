@@ -1,7 +1,8 @@
 import { useState, useRef } from 'react'
 import axios from 'axios'
 
-const API = 'http://localhost:8000/api'
+import API_BASE from '../api.js'
+const API = API_BASE + '/api'
 
 export default function ResumeEvaluator() {
     const [resumeText, setResumeText] = useState('')
@@ -19,7 +20,7 @@ export default function ResumeEvaluator() {
             const { data } = await axios.post(`${API}/resume/evaluate`, { resume_text: resumeText, target_role: targetRole })
             setResult(data.evaluation)
         } catch {
-            setResult('❌ Error: Make sure the backend is running at http://localhost:8000')
+            setResult('❌ Error: Unable to reach the server. Please try again.')
         }
         setLoading(false)
     }
