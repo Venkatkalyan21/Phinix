@@ -1,8 +1,9 @@
 fastapi
 uvicorn[standard]
-google-generativeai
+google-genai
 python-dotenv
 python-multipart
 pydantic
 scikit-learn
 numpy
+PyMuPDF
