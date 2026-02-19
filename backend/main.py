@@ -15,7 +15,12 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "https://vidyaguide-frontend.onrender.com",  # Render frontend URL
+        "https://*.onrender.com",                    # any Render subdomain
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -40,3 +45,8 @@ def root():
         "agents": ["Resume Agent", "Career Intelligence Agent", "Skill Gap Agent", "Roadmap Planner Agent", "Interview Coach Agent"],
         "features": 10
     }
+
+@app.get("/debug/key")
+def debug_key():
+    key = os.getenv("GEMINI_API_KEY", "NOT_SET")
+    return {"key_length": len(key), "key_prefix": key[:8] if key != "NOT_SET" else "NOT_SET", "key_suffix": key[-4:] if key != "NOT_SET" else "NOT_SET"}

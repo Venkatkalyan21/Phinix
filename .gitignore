@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Secrets — NEVER commit these
+.env
+*.env
+backend/.env
+
+# Node
+node_modules/
+dist/
+.dist/
+
+# IDE
+.vscode/
+.idea/
+*.DS_Store
+
+# Render / build artifacts
+.render/
+build/
